@@ -10,7 +10,7 @@
 <body>
 
         <h2>
-            <a href="http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin/Edit">Создать новость</a>
+            <a href="http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin/Edit">Создать новость</a>
         </h2>
 
         <h1>Список новостей</h1>
@@ -27,12 +27,12 @@
                     <td><?php echo $item->id; ?></td>
                     <td><?php echo $item->title; ?></td>
                     <td>
-                        <a href="http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin/Edit/?id=<?php echo $item->id; ?>">
+                        <a href="http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin/Edit/?id=<?php echo $item->id; ?>">
                             Редактировать
                         </a>
                     </td>
                     <td>
-                        <a href="http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin/Delete/?id=<?php echo $item->id; ?>">
+                        <a href="http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin/Delete/?id=<?php echo $item->id; ?>">
                             Удалить
                         </a>
                     </td>

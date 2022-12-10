@@ -27,7 +27,7 @@
             endforeach;
         endif; ?>
 
-        <form action="http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin/Save" method="post">
+        <form action="http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin/Save" method="post">
 
             <input
                     type="hidden"

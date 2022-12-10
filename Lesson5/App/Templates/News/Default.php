@@ -10,7 +10,7 @@
         <h2><?php echo $article->title; ?></h2>
         <div><?php echo $article->lead; ?></div>
         <p>
-            <a href="http://localhost/PHP-2-Professional-programming-main/Lesson6/Index/One/?id=<?php echo $article->id; ?>">
+            <a href="http://localhost/PHP-2-Professional-programming-main/Lesson5/Index/One/?id=<?php echo $article->id; ?>">
                 Читать далее...
             </a>
         </p>

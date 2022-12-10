@@ -13,7 +13,7 @@
     </article>
     <hr>
     <p>
-        <a href="http://localhost/PHP-2-Professional-programming-main/Lesson6/">
+        <a href="http://localhost/PHP-2-Professional-programming-main/Lesson5/">
             Читать все новости
         </a>
     </p>

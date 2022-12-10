@@ -41,7 +41,7 @@ class Admin
                 try {
                     $article->fill($_POST);
                     $article->save();
-                    header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin');
+                    header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin');
                     exit();
 
                 } catch (ErrorsExceptions $errors){
@@ -56,7 +56,7 @@ class Admin
                 try {
                     $article->fill($_POST);
                     $article->save();
-                    header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin');
+                    header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin');
                     exit();
 
                 } catch (ErrorsExceptions $errors){
@@ -67,7 +67,7 @@ class Admin
 
             }
         } else {
-            header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin');
+            header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin');
         }
     }
 
@@ -77,12 +77,12 @@ class Admin
             $article = Article::findById($_GET['id']);
 
             if (empty($article)){
-                header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin/Default');
+                header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin/Default');
             }
 
             $article->delete();
         }
 
-        header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson6/Admin/Default');
+        header('Location: http://localhost/PHP-2-Professional-programming-main/Lesson5/Admin/Default');
     }
 }
