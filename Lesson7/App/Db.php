@@ -7,6 +7,7 @@ use App\Exceptions\DB\PDOExecuteException;
 
 class Db
 {
+    use PdoPrepareTrait;
 
     protected $dbh;
 
@@ -27,23 +28,26 @@ class Db
 
     public function query(string $sql, array $params = [], $class = \stdClass::class): array
     {
-        try {
-            $sth = $this->dbh->prepare($sql);
-        } catch (\PDOException $e) {
-            throw new PDOExecuteException('Ошибка при подготовке SQL-запроса');
-        }
-
+        $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
+
         return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
+    }
+
+    public function queryEach(string $sql, array $params = [], $class = \stdClass::class)
+    {
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute($params);
+
+        $sth->setFetchMode(\PDO::FETCH_CLASS, $class);
+        while ($record = $sth->fetch()) {
+            yield $record;
+        };
     }
 
     public function execute(string $sql, array $params = [])
     {
-        try {
-            $sth = $this->dbh->prepare($sql);
-        } catch (\PDOException $e) {
-            throw new PDOExecuteException('Ошибка при подготовке SQL-запроса');
-        }
+        $sth = $this->dbh->prepare($sql);
 
         return $sth->execute($params);
     }

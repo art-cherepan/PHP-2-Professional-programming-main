@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Exceptions\DB\DbConnectException;
-use App\Exceptions\DB\PDOPrepareException;
+use App\Exceptions\DB\PDOExecuteException;
 
 class Db
 {
@@ -30,7 +30,7 @@ class Db
         try {
             $sth = $this->dbh->prepare($sql);
         } catch (\PDOException $e) {
-            throw new PDOPrepareException('Ошибка при подготовке SQL-запроса');
+            throw new PDOExecuteException('Ошибка при подготовке SQL-запроса');
         }
 
         $sth->execute($params);
@@ -42,7 +42,7 @@ class Db
         try {
             $sth = $this->dbh->prepare($sql);
         } catch (\PDOException $e) {
-            throw new PDOPrepareException('Ошибка при подготовке SQL-запроса');
+            throw new PDOExecuteException('Ошибка при подготовке SQL-запроса');
         }
 
         return $sth->execute($params);
